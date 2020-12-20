@@ -23,7 +23,7 @@ jobs:
       uses: Borales/actions-yarn@v2.3.0
       with:
                   cmd: install
-    - run: npm ci
-    - run: yarn build
+    - name: run building
+      run: yarn build
     - name: deploying on surge
       run: surge ./build http://remarkable-roof.surge.sh/ --token ${{secrets.SURGE_TOKEN}}
